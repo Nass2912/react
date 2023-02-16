@@ -1,8 +1,15 @@
-function ImageList() {
+import ImageShow from './ImageShow';
+import './ImageList.css';
+
+function ImageList({images}) {
+  
+  const renderedImages = images.map((image) => {
+    return <ImageShow key={image.id} image={image}/>
+  })
+
   return (
-    <div className="ImageList">
-      <h1>React ImageList</h1>
-      <p>This is really working!</p>
+    <div className="image-list">
+      {renderedImages}  
     </div>
   );
 }

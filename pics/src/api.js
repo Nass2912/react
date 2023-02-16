@@ -9,7 +9,7 @@ const searchImages = async (searchParams) => {
       query: searchParams
     }
   })
-  console.log("response.data.results: ",response.data.results)
+  return response.data.results;
 }
 
  

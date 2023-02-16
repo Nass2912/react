@@ -1,8 +1,7 @@
-function ImageShow() {
+function ImageShow({image}) {
   return (
     <div className="ImageShow">
-      <h1>React ImageShow</h1>
-      <p>This is really working!</p>
+      <img src={image.urls.small} alt={image.alt_description}/>
     </div>
   );
 }
