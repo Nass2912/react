@@ -46,7 +46,7 @@ function BookEdit({title, author, index, referencedUpdate}){
           <div className="field">
             <label className="label">Author</label>
             <div className="control">
-            <input className='input' type="text" value={otherValue} onChange={(event) => {handleChange("title", event)}}/>
+            <input className='input' type="text" value={otherValue} onChange={(event) => {handleChange("", event)}}/>
             </div>
           </div>
           <div className="control">
