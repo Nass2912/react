@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function App() {
   const [images, setImages] = useState([]);
-
+  
   const onSubmitterFn = async (term) => {    
     const result = await searchImages(term);
     setImages(result);
