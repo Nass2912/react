@@ -12,6 +12,7 @@ function BookList({books,referencedUpdateFromApp}){
           index={index}
           title={book.title}
           author={book.author}
+          time={book.time}
           referencedUpdateFromList={referencedUpdateFromList}
         />
     )
