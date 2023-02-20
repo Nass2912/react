@@ -21,6 +21,7 @@ function BookEdit({title, author, index, referencedUpdate}){
   const handleSubmit = (e) => {
     e.preventDefault();
     referencedUpdate({title: value, author: otherValue, index: index})
+    setToggler(false);
   }
 
   const renderButtonText = () => {
@@ -36,16 +37,16 @@ function BookEdit({title, author, index, referencedUpdate}){
       return(
         <form onSubmit={handleSubmit} style={{width: "80%"}}>
           <div className="field">
-            <label className="label">Author</label>
+            <label className="label">Title</label>
             <div className="control">
             <input className='input' type="text" value={value} onChange={(event) => {handleChange("title", event)}}/>
             </div>
           </div>
 
           <div className="field">
-            <label className="label">Title</label>
+            <label className="label">Author</label>
             <div className="control">
-            <input className='input' type="text" value={value} onChange={(event) => {handleChange("title", event)}}/>
+            <input className='input' type="text" value={otherValue} onChange={(event) => {handleChange("title", event)}}/>
             </div>
           </div>
           <div className="control">
