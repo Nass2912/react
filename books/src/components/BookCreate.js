@@ -11,7 +11,8 @@ function BookCreate({referencedClick}){
   return(
     <div className="box">
       <form onSubmit={handleSubmit} style={{
-            width: "80%"
+            width: "50%",
+            margin: "0 auto"
       }}>
         <div className="field">
           <label className="label">Author</label>
