@@ -1,9 +1,10 @@
 import BookCreate from './components/BookCreate'
 import BookList from './components/BookList'
 import {useState} from 'react'
+import 'bulma/css/bulma.css'
 
 function App(){
-  const [Books, setBooks] = useState([])
+  const [Books, setBooks] = useState([{title: "The Bible", author: "God"}])
   
   const referencedUpdateFromApp = (value) => {
     const newBooks = [...Books]
@@ -11,12 +12,13 @@ function App(){
     setBooks(newBooks)
   }
 
-  function increment(obj){
+  function AddToBooks(obj){
+    if(!obj.title || !obj.author) return alert("Please fill out both fields")
     setBooks([...Books, {title: obj.title, author: obj.author}])
   }
   return (
     <>
-      <BookCreate referencedClick={increment}/>
+      <BookCreate referencedClick={AddToBooks}/>
       <BookList
         books={Books}
         referencedUpdateFromApp={referencedUpdateFromApp}

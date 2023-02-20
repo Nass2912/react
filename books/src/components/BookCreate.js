@@ -9,12 +9,30 @@ function BookCreate({referencedClick}){
   }
 
   return(
-    <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Book Title" />
-      <input type="text" placeholder="Book Author" />
-      <button type="submit">Submit</button>
-    </form>
+    <div className="box">
+      <form onSubmit={handleSubmit} style={{
+            width: "80%"
+      }}>
+        <div className="field">
+          <label className="label">Author</label>
+          <div className="control">
+            <input className="input" type="text" placeholder="e.g bible"/>
+          </div>
+        </div>
+
+        <div className="field">
+          <label className="label">Title</label>
+          <div className="control">
+            <input className="input" type="text" placeholder="e.g. jesus"/>
+          </div>
+        </div>
+        <div className="control">
+          <button className="button is-primary">Add Book</button>
+        </div>
+      </form>
+    </div> 
   )
 }
 
 export default BookCreate;
+

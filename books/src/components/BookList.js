@@ -7,20 +7,19 @@ function BookList({books,referencedUpdateFromApp}){
 
   const booksDisplay = books.map((book, index) => {
     return(
-      <BookShow
-        key={index}
-        index={index}
-        title={book.title}
-        author={book.author}
-        referencedUpdateFromList={referencedUpdateFromList}
-      />
+        <BookShow
+          key={index}
+          index={index}
+          title={book.title}
+          author={book.author}
+          referencedUpdateFromList={referencedUpdateFromList}
+        />
     )
   })
   return(
-    <>
-      <div>BookList</div>
+    <div className="columns" style={{flexWrap: "wrap"}}>
       {booksDisplay}
-    </>
+    </div>
   )
 }
 

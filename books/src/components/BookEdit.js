@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function BookEdit({title, author, index, referencedUpdate}){
-  
+
   const [toggler, setToggler] = useState(false);
   const [value, setValue] = useState(title)
   const [otherValue, setOtherValue] = useState(author)
@@ -24,20 +24,33 @@ function BookEdit({title, author, index, referencedUpdate}){
   }
 
   const renderButtonText = () => {
-    if(toggler){
-      return "Cancel"
+    if(toggler){ 
+      return <button className='button is-danger' onClick={handleClick}>Cancel</button>
     } else {
-      return "Edit"
+      return <button className='button is-primary' onClick={handleClick}>Edit</button>
     }
   }
 
   const showEdit = () => {
     if(toggler){
       return(
-        <form onSubmit={handleSubmit}>
-          <input type="text" value={value} onChange={(event) => {handleChange("title", event)}}/>
-          <input type="text" value={otherValue} onChange={(event) => {handleChange("author", event)}}/>
-          <button type="submit">Submit</button>
+        <form onSubmit={handleSubmit} style={{width: "80%"}}>
+          <div className="field">
+            <label className="label">Author</label>
+            <div className="control">
+            <input className='input' type="text" value={value} onChange={(event) => {handleChange("title", event)}}/>
+            </div>
+          </div>
+
+          <div className="field">
+            <label className="label">Title</label>
+            <div className="control">
+            <input className='input' type="text" value={value} onChange={(event) => {handleChange("title", event)}}/>
+            </div>
+          </div>
+          <div className="control">
+            <button className="button is-primary">Edit Book</button>
+          </div>
         </form>
       )
     }
@@ -45,8 +58,8 @@ function BookEdit({title, author, index, referencedUpdate}){
 
   return(
     <>
-      <div>
-        <button onClick={handleClick}>{renderButtonText()}</button>
+      <div style={{ paddingBottom: "10px", margin: "0 20px"}}>
+        {renderButtonText()}
         {showEdit()}
       </div>
     </>
