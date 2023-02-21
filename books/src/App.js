@@ -13,9 +13,9 @@ function App(){
     setBooks(newBooks)
   }
 
-  function AddToBooks(obj){
+  const AddToBooks = (obj) =>{
     if(!obj.title || !obj.author) return alert("Please fill out both fields")
-    setBooks([...Books, {title: obj.title, author: obj.authort,time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a"))}])
+    setBooks([{title: obj.title, author: obj.author,time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a"))}, ...Books])
   }
 
   const referencedDelete = (value) => {
