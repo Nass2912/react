@@ -6,6 +6,8 @@ function BookCreate({referencedClick}){
       title: e.target[0].value,
       author: e.target[1].value
     })
+    e.target[0].value = ""
+    e.target[1].value = ""
   }
 
   return(

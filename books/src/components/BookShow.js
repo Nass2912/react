@@ -1,8 +1,12 @@
 import BookEdit from "./BookEdit";
 
-function BookShow({title, author, index, referencedUpdateFromList, time}){
+function BookShow({title, author, index, referencedUpdateFromList, time, referencedDelete}){
   const referencedUpdate = (value) => {
     referencedUpdateFromList(value)
+  }
+
+  const handleDelete = () => {
+    referencedDelete(index)
   }
   return(
     <>
@@ -33,12 +37,15 @@ function BookShow({title, author, index, referencedUpdateFromList, time}){
               <div style={{color: "blue"}}>{time}</div>
             </div>
           </div>
-          <BookEdit
-            title={title}
-            author={author}
-            index={index}
-            referencedUpdate={referencedUpdate}
-          />
+          <div style={{display:"flex"}}>
+            <BookEdit
+              title={title}
+              author={author}
+              index={index}
+              referencedUpdate={referencedUpdate}
+            />
+            <button className="button is-danger" onClick={handleDelete}>Delete</button>
+          </div>
         </div>
       </div>
     </>

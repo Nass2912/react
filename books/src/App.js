@@ -17,12 +17,22 @@ function App(){
     if(!obj.title || !obj.author) return alert("Please fill out both fields")
     setBooks([...Books, {title: obj.title, author: obj.authort,time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a"))}])
   }
+
+  const referencedDelete = (value) => {
+    let newBooks = [...Books]
+    newBooks = newBooks.filter((book) => {
+      return book !== newBooks[value]
+    })
+    setBooks(newBooks)
+  }
+
   return (
     <>
       <BookCreate referencedClick={AddToBooks}/>
       <BookList
         books={Books}
         referencedUpdateFromApp={referencedUpdateFromApp}
+        referencedDelete={referencedDelete}
       />
     </>
   )

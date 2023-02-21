@@ -1,6 +1,6 @@
 import BookShow from "./BookShow";
 
-function BookList({books,referencedUpdateFromApp}){
+function BookList({books,referencedUpdateFromApp,referencedDelete}){
   const referencedUpdateFromList = (value) => {
     referencedUpdateFromApp(value)
   }
@@ -14,6 +14,7 @@ function BookList({books,referencedUpdateFromApp}){
           author={book.author}
           time={book.time}
           referencedUpdateFromList={referencedUpdateFromList}
+          referencedDelete={(value) => referencedDelete(value)}
         />
     )
   })
