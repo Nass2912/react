@@ -1,12 +1,9 @@
 import BookEdit from "./BookEdit";
 
-function BookShow({title, author, index, referencedUpdateFromList, time, referencedDelete}){
-  const referencedUpdate = (value) => {
-    referencedUpdateFromList(value)
-  }
+function BookShow({title, author, index, referencedUpdateFromList, time, referencedDeleteFromList, img}){
 
   const handleDelete = () => {
-    referencedDelete(index)
+    referencedDeleteFromList(index)
   }
   return(
     <>
@@ -14,14 +11,14 @@ function BookShow({title, author, index, referencedUpdateFromList, time, referen
         <div className="card">
           <div className="card-image">
             <figure className="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"/>
+              <img src={img} alt="Placeholder image"/>
             </figure>
           </div>
           <div className="card-content">
             <div className="media">
               <div className="media-left">
                 <figure className="image is-48x48">
-                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"/>
+                  <img src={img} alt="Placeholder image"/>
                 </figure>
               </div>
               <div className="media-content">
@@ -42,7 +39,7 @@ function BookShow({title, author, index, referencedUpdateFromList, time, referen
               title={title}
               author={author}
               index={index}
-              referencedUpdate={referencedUpdate}
+              referencedUpdate={referencedUpdateFromList}
             />
             <button className="button is-danger" onClick={handleDelete}>Delete</button>
           </div>

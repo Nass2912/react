@@ -1,9 +1,6 @@
 import BookShow from "./BookShow";
 
 function BookList({books,referencedUpdateFromApp,referencedDelete}){
-  const referencedUpdateFromList = (value) => {
-    referencedUpdateFromApp(value)
-  }
 
   const booksDisplay = books.map((book, index) => {
     return(
@@ -13,8 +10,9 @@ function BookList({books,referencedUpdateFromApp,referencedDelete}){
           title={book.title}
           author={book.author}
           time={book.time}
-          referencedUpdateFromList={referencedUpdateFromList}
-          referencedDelete={(value) => referencedDelete(value)}
+          img={book.img}
+          referencedUpdateFromList={referencedUpdateFromApp}
+          referencedDeleteFromList={referencedDelete}
         />
     )
   })
