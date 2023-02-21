@@ -20,8 +20,8 @@ function App(){
 
   const referencedDelete = (value) => {
     let newBooks = [...Books]
-    newBooks = newBooks.filter((book) => {
-      return book !== newBooks[value]
+    newBooks = newBooks.filter((_book, index) => {
+      return value !== index
     })
     setBooks(newBooks)
   }
