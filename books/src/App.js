@@ -8,9 +8,17 @@ function App(){
   
   
   const referencedUpdateFromApp = (value) => {
-    const newBooks = [...Books]
-    newBooks[value.index] = {title: value.title, author: value.author, time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a"))}
-    setBooks(newBooks)
+    // const newBooks = [...Books]
+    // newBooks[value.index] = {title: value.title, author: value.author, time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a"))}
+    // setBooks(newBooks)
+    const intBooks = Books.map((book, index) => {
+      if(index === value.index){
+        return {title: value.title, author: value.author, time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a"))}
+      } else {
+        return book
+      }
+    })
+    setBooks(intBooks)
   }
 
   const AddToBooks = (obj) =>{
