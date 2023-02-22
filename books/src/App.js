@@ -1,6 +1,6 @@
 import BookCreate from './components/BookCreate'
 import BookList from './components/BookList'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import DateObject from 'react-date-object'
 import searchImages from './api'
 import axios from 'axios'
@@ -12,11 +12,20 @@ function App(){
     setBooks(response.data)
   }
   
-  const referencedUpdateFromApp = (value) => {
-    console.log(value)
+  useEffect(() => {
+    fetchBooks();
+  },[])
+
+  const referencedUpdateFromApp = async (value) => {
+    const response = await axios.put(`http://localhost:3001/books/${value.index}`,{
+      title: value.title,
+      author: value.author,
+    });
+    console.log(response)
+
     const intBooks = Books.map((book) => {
       if(book.id === value.index){
-        return { ...book, title: value.title, author: value.author, time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a"))}
+        return { ...book, ...response.data}
       }else{
         return book;
       }
@@ -50,7 +59,8 @@ function App(){
     }
   }
 
-  const referencedDelete = (value) => {
+  const referencedDelete = async (value) => {
+    const response = await axios.delete(`http://localhost:3001/books/${value}`)
     let newBooks = [...Books]
     newBooks = newBooks.filter((book) => {
       return book.id !== value
