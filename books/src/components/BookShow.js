@@ -11,14 +11,14 @@ function BookShow({title, author, index, referencedUpdateFromList, time, referen
         <div className="card">
           <div className="card-image">
             <figure className="image is-4by3">
-              <img src={img} alt="Placeholder image"/>
+              <img src={img} alt="Placeholder"/>
             </figure>
           </div>
           <div className="card-content">
             <div className="media">
               <div className="media-left">
                 <figure className="image is-48x48">
-                  <img src={img} alt="Placeholder image"/>
+                  <img src={img} alt="Placeholder"/>
                 </figure>
               </div>
               <div className="media-content">

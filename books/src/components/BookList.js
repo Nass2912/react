@@ -2,11 +2,11 @@ import BookShow from "./BookShow";
 
 function BookList({books,referencedUpdateFromApp,referencedDelete}){
 
-  const booksDisplay = books.map((book, index) => {
+  const booksDisplay = books.map((book) => {
     return(
         <BookShow
-          key={index}
-          index={index}
+          key={book.id}
+          index={book.id}
           title={book.title}
           author={book.author}
           time={book.time}
