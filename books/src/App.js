@@ -3,10 +3,14 @@ import BookList from './components/BookList'
 import {useState} from 'react'
 import DateObject from 'react-date-object'
 import searchImages from './api'
+import axios from 'axios'
 
 function App(){
-  const [Books, setBooks] = useState([{id: Math.floor(Math.random()*9999) ,title: "The Bible", author: "God", time: new DateObject("2023 2 20 14 02 36 100 pm").format(("dddd DD MMMM @ hh:mm:ss.SSS a")), img:"https://upload.wikimedia.org/wikipedia/commons/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg"}])
-  
+  const [Books, setBooks] = useState([])
+  const fetchBooks = async () => {
+    const response = await axios.get('http://localhost:3001/books')
+    setBooks(response.data)
+  }
   
   const referencedUpdateFromApp = (value) => {
     console.log(value)
@@ -27,14 +31,22 @@ function App(){
     }
     else{
       const img = await searchImages(obj.title)
-      const bookToAdd = {
-        id: Math.floor(Math.random()*9999),
+      const response = await axios.post('http://localhost:3001/books',{
         title: obj.title,
         author: obj.author,
         time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a")),
         img:img[0].urls.regular
-      }
-      setBooks([bookToAdd, ...Books])
+      })
+      setBooks([response.data, ...Books])
+      // const img = await searchImages(obj.title)
+      // const bookToAdd = {
+      //   id: Math.floor(Math.random()*9999),
+      //   title: obj.title,
+      //   author: obj.author,
+      //   time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a")),
+      //   img:img[0].urls.regular
+      // }
+      // setBooks([bookToAdd, ...Books])
     }
   }
 
