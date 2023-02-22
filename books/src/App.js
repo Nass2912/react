@@ -19,8 +19,8 @@ function App(){
   const referencedUpdateFromApp = async (value) => {
     const response = await axios.put(`http://localhost:3001/books/${value.index}`,{
       title: value.title,
-      author: value.author,
-    });
+      author: value.author
+    })
     console.log(response)
 
     const intBooks = Books.map((book) => {
@@ -47,15 +47,6 @@ function App(){
         img:img[0].urls.regular
       })
       setBooks([response.data, ...Books])
-      // const img = await searchImages(obj.title)
-      // const bookToAdd = {
-      //   id: Math.floor(Math.random()*9999),
-      //   title: obj.title,
-      //   author: obj.author,
-      //   time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a")),
-      //   img:img[0].urls.regular
-      // }
-      // setBooks([bookToAdd, ...Books])
     }
   }
 
