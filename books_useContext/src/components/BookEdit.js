@@ -1,9 +1,7 @@
-import { useState, useContext } from 'react';
-import { BooksContext } from '../context/books';
+import { useState } from 'react';
 
+function BookEdit({title, author, index, referencedUpdate}){
 
-function BookEdit({title, author, index}){
-  const {referencedUpdateFromApp} = useContext(BooksContext)
   const [toggler, setToggler] = useState(false);
   const [value, setValue] = useState(title)
   const [otherValue, setOtherValue] = useState(author)
@@ -22,7 +20,7 @@ function BookEdit({title, author, index}){
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    referencedUpdateFromApp({title: value, author: otherValue, index: index})
+    referencedUpdate({title: value, author: otherValue, index: index})
     setToggler(false);
   }
 
