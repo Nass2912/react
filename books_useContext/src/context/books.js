@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useCallback } from "react";
 import axios from "axios";
 import DateObject from 'react-date-object'
 import { searchImages } from "../api.js";
@@ -10,10 +10,11 @@ const Provider = ({children}) => {
   
   const [Books, setBooks] = useState([])
 
-  const fetchBooks = async () => {
+  const fetchBooks = useCallback(
+    async () => {
     const response = await axios.get('http://localhost:3001/books')
     setBooks(response.data)
-  }
+  },[]) 
 
   const referencedUpdateFromApp = async (value) => {
     const intImg = Books.find((book) => book.id === value.index).img
