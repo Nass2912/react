@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 function BookList(){
   const {Books} = useContext(BooksContext)
-  const booksDisplay = Books.map((book) => {
+  const booksDisplay = Books.reverse().map((book) => {
     return(
         <BookShow
           key={book.id}

@@ -9,17 +9,24 @@
     },
     {
       "title": "airbus",
-      "author": "king of the sky",
+      "author": "king of the skiess",
       "img": "https://images.unsplash.com/photo-1543903905-cee4ab46985c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDk5NzV8MHwxfHNlYXJjaHwxfHxhaXJidXN8ZW58MHx8fHwxNjc3MjIxODYz&ixlib=rb-4.0.3&q=80&w=1080",
-      "time": "Tuesday 28 February @ 02:42:36.956 pm",
+      "time": "Wednesday 01 March @ 10:12:43.028 pm",
       "id": 6
     },
     {
       "title": "mauritius",
-      "author": "paradise",
-      "time": "Friday 24 February @ 10:58:17.048 am",
+      "author": "paradises",
       "img": "https://images.unsplash.com/photo-1513415277900-a62401e19be4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDk5NzV8MHwxfHNlYXJjaHwxfHxtYXVyaXRpdXN8ZW58MHx8fHwxNjc3MjIxODk2&ixlib=rb-4.0.3&q=80&w=1080",
+      "time": "Wednesday 01 March @ 10:12:50.479 pm",
       "id": 7
+    },
+    {
+      "title": "pieter both",
+      "author": "mountain",
+      "time": "Wednesday 01 March @ 09:34:26.196 pm",
+      "img": "https://images.unsplash.com/photo-1576066550322-a89cdc71060e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDk5NzV8MHwxfHNlYXJjaHwxfHxwaWV0ZXIlMjBib3RofGVufDB8fHx8MTY3NzY5MjA2Ng&ixlib=rb-4.0.3&q=80&w=1080",
+      "id": 8
     }
   ]
 }

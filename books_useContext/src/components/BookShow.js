@@ -1,9 +1,11 @@
 import BookEdit from "./BookEdit";
+import { BooksContext } from "../context/books";
+import { useContext } from "react";
 
-function BookShow({title, author, index, referencedUpdateFromList, time, referencedDeleteFromList, img}){
-
+function BookShow({title, author, index, time, img}){
+  const {referencedDelete} = useContext(BooksContext)
   const handleDelete = () => {
-    referencedDeleteFromList(index)
+    referencedDelete(index)
   }
   return(
     <>
@@ -39,7 +41,6 @@ function BookShow({title, author, index, referencedUpdateFromList, time, referen
               title={title}
               author={author}
               index={index}
-              referencedUpdate={referencedUpdateFromList}
             />
             <button className="button is-danger" onClick={handleDelete}>Delete</button>
           </div>

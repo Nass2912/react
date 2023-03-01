@@ -24,7 +24,7 @@ const Provider = ({children}) => {
       time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a"))
     })
       
-    const intBooks = Books.map((book) => {
+    const intBooks = Books.reverse().map((book) => {
       if(book.id === value.index){
         return { ...book, ...response.data}
       }else{
@@ -46,7 +46,7 @@ const Provider = ({children}) => {
         time: new DateObject().format(("dddd DD MMMM @ hh:mm:ss.SSS a")),
         img:img[0].urls.regular
       })
-      setBooks([response.data, ...Books])
+      setBooks([...Books, response.data])
     }
   }
 
