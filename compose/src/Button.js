@@ -1,3 +1,5 @@
+import className from "classnames"
+
 const Button = ({
   children,
   primary,
@@ -10,7 +12,7 @@ const Button = ({
 }) => 
 {
   return (
-    <button className="bg-red-400 text-white border-2 border-slate-300 px-2 py-1.5 border">
+    <button className="bg-red-400 border-red-500 text-white border-2 border-slate-300 px-2 py-1.5 border">
       {children}
     </button>
   )
