@@ -10,7 +10,7 @@ const Button = ({
 }) => 
 {
   return (
-    <button>
+    <button className="bg-red-400 text-white border-2 border-slate-300 px-2 py-1.5 border">
       {children}
     </button>
   )
