@@ -4,7 +4,7 @@ const App = () => {
   return (
     <>
       <div>
-        <Button warning rounded>Hey You!</Button>
+        <Button primary rounded>Hey You!</Button>
       </div>
       <div>
         <Button success rounded outline>Click Me</Button>

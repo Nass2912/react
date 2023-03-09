@@ -11,8 +11,22 @@ const Button = ({
   rounded
 }) => 
 {
+  const finalClassNames = className('px-3 py-1.5 border',{
+    'border-gray-500 bg-gray-500 text-white': primary,
+    'border-blue-500 bg-blue-500 text-white': secondary,
+    'border-green-500 bg-green-500 text-white': success,
+    'border-orange-500 bg-orange-500 text-white': warning,
+    'border-red-500 bg-red-500 text-white': danger,
+    'rounded-full' :rounded,
+    'bg-white border' : outline,
+    'text-blue-500': outline && primary,
+    'text-gray-900': outline && secondary,
+    'text-green-500': outline && success,
+    'text-orange-500': outline && warning,
+    'text-red-500': outline && danger,
+  })
   return (
-    <button className="bg-red-400 border-red-500 text-white border-2 border-slate-300 px-2 py-1.5 border">
+    <button className={finalClassNames}>
       {children}
     </button>
   )
